@@ -1,0 +1,44 @@
+<% layout('layouts/dboilerplate')%>
+<h1>Pending</h1>
+<style>
+    #cards{
+        background-color: grey;
+        color: white;
+    }
+    </style>
+ 
+<div class="row text-center">
+
+     
+     
+
+    <% for(let i = 0; i < p.length; i++){%>
+    
+      
+
+    <div class="col">
+
+        <div class="card" id="cards" style="width: 18rem; margin : 20px;">
+           
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center;" ><%= p[i].username %> </h5>
+                
+            <!-- <a href="#!" class="btn btn-primary">Add</a>--> 
+            
+             <p class="card-text"   style=" text-align: center;"   > <%= lst4[i].slot%></p>
+
+             <p class="card-text"   style=" text-align: center;"   > <%= lst4[i].date %></p>
+             <div class="mb-3">
+              <a href="/confirm/<%=lst4[i]._id%>" class="btn btn-info"> Confirm</a>
+             </div>
+            
+           
+              
+          
+
+
+           
+            </div>
+          </div>
+</div>
+<% }%>

@@ -1,0 +1,42 @@
+<% layout('layouts/dboilerplate')%>
+<style>
+    #cards{
+        background-color: grey;
+        color: white;
+    }
+    </style>
+  
+  <form action="/pendings" method="post" novalidate class="validated-form">
+    <input type="text" name="dn" value="<%= lst4[0].dname %>" hidden  >
+    <button   type="submit"   class="btn btn-info" style="background-color: darkcyan;border-radius: 10px;float: left;">check Pending</button>
+</form>
+<h1 style="text-align:center" >Bookings</h1>
+
+ 
+<div class="row text-center">
+
+   
+
+
+ 
+  <% for(let i = 0; i < p.length; i++){%>
+      
+
+    <div class="col">
+
+        <div class="card" id="cards" style="width: 18rem; margin : 20px;">
+           
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center;" >Patient Name : <%= p[i].username %> </h5>
+             <p class="card-text"   style=" text-align: center;"   >Scheduled slot :<%= lst4[i].slot%></p>
+
+             <p class="card-text"   style=" text-align: center; font-size: 75%;"   >Scheduled On <%= lst4[i].date %></p>
+             <div class="mb-3">
+                <a href="https://gotalk.to/<%=lst4[i]._id%>" style="float: left; margin-left: 140px; font-size: 48%" class="btn btn-info">Join Meet</a>
+               </div>
+           
+          
+            </div>
+          </div>
+</div>
+<% }%>
